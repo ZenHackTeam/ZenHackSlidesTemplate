@@ -153,12 +153,32 @@
 \setbeamercolor*{subsection in sidebar shaded}{parent=section in sidebar shaded}
 
 %Global Background must be put in preamble
-
 \ifboolexpe{ bool {solarized@dark}}{
-	\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{background.png}}
+%% Dark
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{style/background.png}}
 }{
-  %% Light
-	\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{background_light.png}}
+%% Light
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{style/background_light.png}}
+}
+\setbeamertemplate{navigation symbols}{}
+\setbeamerfont{frametitle}{size=\huge}
+\setbeamercolor{footcolor}{fg=solarizedAccent, bg=solarizedRebase02}
+\setbeamertemplate{footline}
+{
+  
+  \hbox{%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{footcolor}%
+    \insertshortauthor
+  \end{beamercolorbox}%
+  
+  \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex,center]{footcolor}%
+    \insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{footcolor}%
+    \usebeamerfont{title in head/foot}
+    \insertframenumber{} / \inserttotalframenumber
+  \end{beamercolorbox}}%
+
 }
 \setbeamertemplate{navigation symbols}{}
 \mode
